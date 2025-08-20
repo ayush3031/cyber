@@ -1,0 +1,33 @@
+.email-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh; /* centers vertically */
+  width: 100%;
+}
+
+.email-input-container .mantine-Textarea-root {
+  width: 90%;
+  max-width: 600px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.email-input-container label {
+  color: #fff;
+  font-weight: 500;
+}
+
+.email-input-container textarea {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 0.8rem;
+  border-radius: 8px;
+}
+
+.email-input-container textarea:focus {
+  outline: none;
+  border-color: #4f46e5; /* violet accent */
+}

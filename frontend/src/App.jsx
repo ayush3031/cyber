@@ -1,11 +1,11 @@
-
 import './App.css'
-import { Header } from './components/header'
-
+import EmailInput from './components/EmailInput'
+import Navbar from './components/Navbar'
 function App() {
   return (
     <>
-      <Header></Header>
+      <Navbar></Navbar>
+      <EmailInput></EmailInput>
     </>
   )
 }
