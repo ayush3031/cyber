@@ -3,13 +3,14 @@ import { Textarea } from '@mantine/core';
 import '../styles/emailInput.css'
 import { Button } from '@mantine/core';
 
+
 function EmailInput() {
   const [emailText, setEmailText] = useState("");
   const [result,setResult]=useState("");
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/check-email", {
+      const response = await axios.post(`${API_URL}/api/check-email`, {
         text: emailText,
       });
       setResult(response.data.result); // expecting "Suspicious" / "Fraud" / "Okay"
@@ -37,9 +38,16 @@ function EmailInput() {
           size="xl"
           variant="gradient"
           gradient={{ from: 'blue', to: 'cyan' }}
+          onClick={handleSubmit}
+          mt="md"
         >
         Submit
         </Button>
+        {result && (
+          <Text mt="md" fw={700} size="lg">
+            Result: {result}
+          </Text>
+        )}
       </div>
     </section>
   )
