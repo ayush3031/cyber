@@ -2,32 +2,50 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh; /* centers vertically */
+  min-height: 50vh; /* centers vertically */
   width: 100%;
+  margin-top: 8cqi;
 }
 
 .email-input-container .mantine-Textarea-root {
   width: 90%;
   max-width: 600px;
-  background-color: #1a1a1a;
+  background-color:#55555541;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 30px;
+  border: 1px solid ;
+  border-color: #4e4c4ca7;
+  
 }
 
 .email-input-container label {
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: larger;
+  margin-bottom: 18px;
 }
 
 .email-input-container textarea {
-  background-color: #000;
-  color: #fff;
-  border: 1px solid #333;
+  background-color: #f0e8e8;
+  color: #100202;
+  border: 1px solid #fffbfb;
   padding: 0.8rem;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .email-input-container textarea:focus {
   outline: none;
   border-color: #4f46e5; /* violet accent */
+}
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-button{
+  background-color: #FFFFFF;
+  display: block;
+  margin: 20px auto 0 auto; /* top, auto left/right */
+  width: auto; 
 }

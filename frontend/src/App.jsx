@@ -1,10 +1,11 @@
 import './App.css'
 import EmailInput from './components/EmailInput'
+import { HeroTitle } from './components/HeroTitle'
 import Navbar from './components/Navbar'
 function App() {
   return (
     <>
-      <Navbar></Navbar>
+      <HeroTitle></HeroTitle>
       <EmailInput></EmailInput>
     </>
   )
