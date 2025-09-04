@@ -3,6 +3,7 @@ import { JsonInput, Textarea , Text} from '@mantine/core';
 import '../styles/emailInput.css'
 import { Button } from '@mantine/core';
 import axios from "axios";
+import { Response } from './Response';
 
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -54,7 +55,7 @@ function EmailInput() {
         >
         Submit
         </Button>
-        {result && (
+        {result && <Response data={result}></Response>/*(
           <div>
             <h2>Phishing Analysis</h2>
             <p><strong>Suspicion Level:</strong> {result.suspicion_level}</p>
@@ -76,7 +77,7 @@ function EmailInput() {
 
             <p><strong>Recommended Action:</strong> {result.recommended_action}</p>
           </div>
-        )}
+        )*/}
       </div>
     </section>
   )
