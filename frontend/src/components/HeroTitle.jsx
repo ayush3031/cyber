@@ -14,7 +14,7 @@ export function HeroTitle() {
         </h1>
 
         <Text className={classes.description} mt="14px" color="dimmed">
-          Check your mailbox for phishing with full login/signup access, or paste any mail to get started instantly.
+          Check your mailbox for phishing , paste any mail to get started instantly.
         </Text>
 
         <Group className={classes.controls}>
@@ -29,14 +29,14 @@ export function HeroTitle() {
             Get started
           </Button>
 
-          <Button
+          {/*<Button
             size="xl"
             variant="default"
             className={classes.control}
             
           >
             SignUp
-          </Button>
+          </Button>*/}
         </Group>
       </Container>
     </div>
