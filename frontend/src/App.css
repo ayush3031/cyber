@@ -19,3 +19,20 @@ html {
   font-weight: 400;
   font-style: normal;
 }
+
+.response-container{
+  background-color: #2D2D2D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh; /* centers vertically */
+  margin: auto;
+  margin-top: 8cqi;
+  margin-bottom: 8cqi;
+  width: 70%;
+  background-color:#55555541;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid ;
+  border-color: #4e4c4ca7;
+}
