@@ -4,15 +4,17 @@ import '../styles/emailInput.css'
 import { Button } from '@mantine/core';
 import axios from "axios";
 import { Response } from './Response';
-
+import AppLoader from './AppLoader';
 
 const API_URL = import.meta.env.VITE_API_URL;
 function EmailInput() {
   const [emailContent, setEmailContent] = useState("");
   const [result,setResult]=useState("");
+  const [loading, setLoading] = useState(false);
+
 
   const handleSubmit = async () => {
-    console.log("submit button");
+    setLoading(true); 
     try {
       console.log(emailContent);
       console.log(API_URL);
@@ -28,6 +30,9 @@ function EmailInput() {
       setResult(response.data); // expecting "Suspicious" / "Fraud" / "Okay"
     } catch (error) {
       setResult("Error analyzing email");
+    }
+    finally{
+      setLoading(false);
     }
   };
 
@@ -55,29 +60,8 @@ function EmailInput() {
         >
         Submit
         </Button>
-        {result && <Response data={result}></Response>/*(
-          <div>
-            <h2>Phishing Analysis</h2>
-            <p><strong>Suspicion Level:</strong> {result.suspicion_level}</p>
-            <p><strong>Reason:</strong> {result.reason_of_suspicion}</p>
-
-            <h3>Red Flags:</h3>
-            <ul>
-              {result.red_flags.map((flag, index) => (
-                <li key={index}>{flag}</li>
-              ))}
-            </ul>
-
-            <h3>Green Flags:</h3>
-            <ul>
-              {result.green_flags.map((flag, index) => (
-                <li key={index}>{flag}</li>
-              ))}
-            </ul>
-
-            <p><strong>Recommended Action:</strong> {result.recommended_action}</p>
-          </div>
-        )*/}
+        {loading && <AppLoader />}
+        {!loading && result && <Response data={result} />}
       </div>
     </section>
   )
