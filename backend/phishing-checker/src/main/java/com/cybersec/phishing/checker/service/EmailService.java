@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailService {
 
-    @Value("${GEMINI_API_KEY:}") // default empty if not set
+    @Value("${gemini.api.key}") // default empty if not set
     private String apiKey;
 
     private Client client;
@@ -21,6 +21,7 @@ public class EmailService {
             client = null; // client not initialized, but bean is created safely
         } else {
             try {
+                //System.out.println(apiKey);
                 client = Client.builder().apiKey(apiKey).build();
                 System.out.println("Gemini client initialized successfully.");
             } catch (Exception e) {
@@ -51,7 +52,8 @@ public class EmailService {
                     " - `red_flags`: An array of strings, where each string is a suspicious element you identified. **If no red flags are found, this array must contain a single string: 'No red flags identified.'** \n"+
                     "- `recommended_action`: A string containing a clear, safe, step-by-step recommendation for the user. Prioritize user safety and always advise independent verification if there is any doubt. \n"+
 
-                    "Your final output must be only the JSON object. \n Here is the email you have to check \n"
+                    "Your final output must be only the JSON object.Return ONLY valid JSON without markdown formatting or backticks.\n" +
+                    "Do not include ```json fences, only the raw JSON object. \n Here is the email you have to check \n"
                     + request;
             GenerateContentResponse response = client.models.generateContent("gemini-2.5-flash", prompt, null);
             return response.text();
