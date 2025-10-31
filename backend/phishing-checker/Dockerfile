@@ -10,6 +10,8 @@ COPY pom.xml mvnw ./
 
 COPY .mvn .mvn
 
+RUN chmod +x ./mvnw
+
 #download mvn dependencies as batch mode
 RUN ./mvnw dependency:go-offline -B
 
