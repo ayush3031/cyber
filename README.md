@@ -3,6 +3,7 @@
 This project is a web tool that uses the Google Gemini AI to analyze emails for phishing attempts. You paste in the email content, and the app tells you if it looks suspicious.
 
 ## Live Demo : https://phishing-checker.vercel.app/
+<img width="1900" height="746" alt="lnding" src="https://github.com/user-attachments/assets/a2344dbc-71ff-43c7-ad8d-a445e85cb696" />
 
 ## 🛠 Tech Stack
 
